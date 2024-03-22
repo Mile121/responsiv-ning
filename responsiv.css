@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    color: white;
+}
+
+#logo {
+    font-size: 24px;
+    background-color: white;
+    color: red;
+}
+
+#nav {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+    font-size: 22px;
+    background-color: red;
+    width: calc(50% - 50px);
+}
+
+#main, #aside, .column {
+    padding: 10px;
+    background-color: red;
+    color: white;
+    margin: 15px;
+    height: 45px
+}
+
+#main {
+    width: calc(70% - 20px);
+    float: left;
+}
+
+#aside {
+    width: calc(30% - 20px);
+    float: right;
+}
+
+#columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    clear: both;
+}
+
+.column {
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Media Queries */
+
+/* Large screens (desktops) */
+@media only screen and (min-width: 110opx) {
+    .column {
+        width: calc(33.333% - 20px);
+    }
+}
+
+/* Medium screens (tablets) */
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    #main, #aside {
+        width: 100%;
+        float: none;
+    }
+
+    .column {
+        width: calc(50% - 20px); 
+    }
+}
+
+/* Small screens (mobile devices) */
+@media only screen and (max-width: 767px) {
+    #header {
+        flex-direction: column;
+    }
+
+    #logo, #nav {
+        width: 100%;
+    }
+
+    #main, #aside {
+        width: 100%;
+        float: none;
+    }
+
+    .column {
+        width: 100%;
+    }
+}
